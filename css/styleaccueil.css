@@ -1,0 +1,23 @@
+/****** General ***********/
+/* Mise en place de la police globale du site*/
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Mise en place de la charte graphique du site au niveau des couleurs */
+:root {
+    --main-color: #0065FC;
+    --main-bg-color: #F2F2F2;
+    --filter-bg-color: #DEEBFF;
+}
+
+/* Affectation de la main color sur la classe fa-solid déstiné 
+à paramètrer l'icone Font Awesome */
+.fa-solid {
+    color: var(--main-color);
+}
+
+/* Affectation de la couleur d'arrière plan lorsqu'on désire une étoile neutre */
+.neutral-star {
+    color: var(--main-bg-color)
+}
