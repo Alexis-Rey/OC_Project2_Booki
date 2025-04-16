@@ -11,6 +11,18 @@
     --filter-bg-color: #DEEBFF;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 1440px;
+    min-width: 320px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
 /* Affectation de la main color sur la classe fa-solid déstiné 
 à paramètrer l'icone Font Awesome */
 .fa-solid {
@@ -20,4 +32,33 @@
 /* Affectation de la couleur d'arrière plan lorsqu'on désire une étoile neutre */
 .neutral-star {
     color: var(--main-bg-color)
+}
+
+/* Suppression du soulignement des liens et couleur hérité  */
+a {
+    /* color: black; */
+    color: inherit;
+    text-decoration: none;
+}
+
+/****** Header ***********/
+header{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+/* Le code ci-dessous correspond à la version responsive uniquement */
+
+/****** Media queries ***********
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+    header{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    body{
+        flex-direction: row;
+    }
 }
