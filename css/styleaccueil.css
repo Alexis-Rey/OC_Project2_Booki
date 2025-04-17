@@ -1,14 +1,21 @@
 /****** General ***********/
-/* Mise en place de la police globale du site*/
+/* Mise en place de la police globale du site et mise à 0 des marges notamment pour le body*/
 * {
     font-family: 'Raleway', sans-serif;
+    margin:0;
 }
 
-/* Mise en place de la charte graphique du site au niveau des couleurs */
+/* Mise en place de la charte graphique du site au niveau 
+des couleurs et des tailles de police */
 :root {
     --main-color: #0065FC;
     --main-bg-color: #F2F2F2;
     --filter-bg-color: #DEEBFF;
+
+    --main-size: 22px;
+    --subtitle-size: 18px;
+    --normal-size: 16px;
+    --info-size: 14px;
 }
 
 body{
@@ -41,24 +48,63 @@ a {
     text-decoration: none;
 }
 
-/****** Header ***********/
+/**************************** Header ********************************************/
+/* Alignement logo et menu et positionnement sur les extremités */
 header{
     display: flex;
     justify-content: space-between;
-    flex-wrap: nowrap;
 }
 
-/* Le code ci-dessous correspond à la version responsive uniquement */
+/* Dimensionnement du logo de la page Booki */
+.logoBooki{
+    width: 61px;
+    height: 19px;
+    padding: 30px 0px 30px 0px;
+}
 
-/****** Media queries ***********
-/* Small devices (phones, less than 768px) */
+/* Alignement des options du menu, espacement et taille de la police  */
+#menuNav{
+    display: flex;
+    gap:68px;
+    font-size: var(--normal-size);
+}
+
+/* Suppression des puces et ajout d'un espacement pour placer la future bordure */
+#menuNav li{
+    list-style-type: none;
+    padding-top: 16px;
+}
+/* Mise en page de la bordure au survol du menu */
+#menuNav li:hover{
+    color:var(--main-color);
+    border-top: solid 2px;
+    border-bottom: solid 2px transparent;
+    
+}
+
+
+
+/********************************* Media queries *****************************/
+/* Le code ci-dessous correspond à la version responsive uniquement */
+/* Responsive Mobile (<768px) */
 @media (max-width: 767.98px) {
     header{
         flex-direction: column;
-        flex-wrap: wrap;
     }
 
     body{
         flex-direction: row;
+    }
+
+    #menuNav li{
+        list-style-type: none;
+        padding-bottom: 16px;
+    }
+
+    #menuNav li:hover{
+        
+        border-top: solid 2px transparent;
+        border-bottom: solid 2px;
+        
     }
 }
