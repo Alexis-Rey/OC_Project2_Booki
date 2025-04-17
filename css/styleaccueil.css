@@ -18,11 +18,9 @@ des couleurs et des tailles de police */
     --info-size: 14px;
 }
 
+/* Mise en place d'une taille max et min pour le contenu du site avec ajout de marge
+et centrage */
 body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
     max-width: 1440px;
     min-width: 320px;
     padding: 0 50px;
@@ -88,23 +86,39 @@ header{
 /* Le code ci-dessous correspond à la version responsive uniquement */
 /* Responsive Mobile (<768px) */
 @media (max-width: 767.98px) {
+   /* Suppresion des marges de côté du contenu mise en place sur tablette et desktop */
+    body{
+        padding: 0;
+    }
+    
+    /* Disposition du header en colonne pour la version mobile */
     header{
         flex-direction: column;
     }
 
-    body{
-        flex-direction: row;
+    /* Centrage du logo et des textes */
+    a[href="accueil.html"], #menuNav li{
+        text-align: center; 
     }
 
+    /* Suppression du gap entre les élements enfants li
+    Suppression de la marge à gauche intérieur gauche ?  */
+    #menuNav{
+        gap: 0px;
+        padding-left: 0;
+    }
+
+    /* Suppresion du padding top et ajout du bottom pour la barre */
+    /* Largeur mise à 50% pour que chaque li prenne la moitié de la place de son parents ul */
     #menuNav li{
-        list-style-type: none;
+        padding-top: 0px;
         padding-bottom: 16px;
+        width: 100%; 
     }
 
+    /* Déplacement de la barre en bas */
     #menuNav li:hover{
-        
         border-top: solid 2px transparent;
-        border-bottom: solid 2px;
-        
+        border-bottom: solid 2px; 
     }
 }
