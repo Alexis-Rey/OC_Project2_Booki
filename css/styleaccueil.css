@@ -93,12 +93,8 @@ pour la partie responsive*/
     
 }
 
-/**************************** Main ********************************************/
+/********************************* Main *****************************************************/
 /**************************** Section Recherche ********************************************/
-/* Changement de la couleur de l'icone de géolocalisation */
-.fa-location-dot{
-color: black;
-}
 
 /* Mise en disposition colonne et espacement des éléments */
 .selection{
@@ -107,18 +103,18 @@ color: black;
     gap: 35px;
 }
 
-/****************Partie titre *****************/
+/********************************Partie titre ********************************************/
 /* Réglage de la taille du titre H1 et marge avant le paragraphe */
 .selection-title h1{
     font-size: var(--main-size);
     margin-bottom: 8px;
 }
 
-/****************Partie zone de recherche *****************/
+/********************************** Partie zone de recherche *****************************/
 /* Sizing du formulaire complet et alignemnt horizontale */
 #form_selection{
     display:flex;
-    width:28.15%;
+    width:377px;
     height:49px;
 }
 
@@ -147,11 +143,13 @@ autres élements du formulaire */
     min-width: 50px;
 }
 
+/* Changement de la couleur de l'icone de géolocalisation */
 /* Sizing de l'icone geoloc après essaie avec le sizing fa-lg de Font awesome */
 .fa-location-dot{
     width: 14px;
     height: 18px;
     font-size: 1.25em;
+    color: black;
 }
 
 /* Camouflage de la loupe déstiné à la partie mobile */
@@ -164,7 +162,49 @@ display: none;
     background-color: var(--main-color);
 }
 
-/****************Partie info complémentaire *****************/
+/******************************* Partie filtrage *******************************************/
+/* Alignement horizontale des élements, inter-espace et sizing du menu */
+.filtrer{
+    display: flex;
+    gap:15px;
+    width: 60%;
+    height: 50px;
+}
+
+/* Ajout des marges intérieur, épaisseur et taille police du label */
+.filtrer label{
+    padding: 14.5px 0 14.5px 0;
+    font-weight:700;
+    font-size: var(--subtitle-size);
+}
+
+/* Mise en page des boutons de filtre avec nowrap pour empêcher l'icone et le texte de se désaligner
+et fit-content pour empêcher le texte d'overflow */
+.boutonFiltre{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    min-width: fit-content;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 4px 19px 4px 19px;
+    border: solid 2px #D9D9D9;
+    border-radius: 25px;
+    background-color: white;
+}
+
+/* Ajout du fond bleu au survol de la souris */
+.boutonFiltre:hover{
+    background-color: var(--filter-bg-color);
+}
+
+/* Espacement dans les boutons entre l'icone et le texte */
+.fa-money-bill-wave, .fa-person, .fa-fire, .fa-heart{
+    margin-right: 10px;
+}
+
+/************************ Partie info complémentaire *************************************/
 /* Mise en ligne des éléments, centrage vertical du p et font-size à 10px
 pour paramètrer la taille de l'icone en héritage et ne pas utiliser
 le sizing Font Awesome  */
@@ -211,7 +251,7 @@ h4, .listeFooter li{
 }
 
 h4{
-    font-size: 18px;
+    font-size: var(--subtitle-size);
 }
 /********************************* Media queries *****************************/
 /* Le code ci-dessous correspond à la version responsive uniquement */
