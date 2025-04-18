@@ -100,6 +100,42 @@ pour la partie responsive*/
 color: black;
 }
 
+/* Mise en disposition colonne et espacement des éléments */
+.selection{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* Réglage de la taille du titre H1 et marge avant le paragraphe */
+.selection-title h1{
+    font-size: var(--main-size);
+    margin-bottom: 8px;
+}
+/****************Partie info complémentaire *****************/
+/* Mise en ligne des éléments, centrage vertical du p et font-size à 10px
+pour paramètrer la taille de l'icone en héritage et ne pas utiliser
+le sizing Font Awesome  */
+.info{
+    display: flex;
+    align-items: center; 
+    font-size: 10px;
+}
+
+/* On remets la taille des paragraphes influencer ci-dessus */
+.info p, .selection-title p{
+    font-size: var(--normal-size);
+}
+
+/* Paramètrage de l'icone, marge avec le <p>, mise en place de la bordure en cercle */
+.fa-info{
+    margin-right: 10px;
+    --fa-border-width: 1px;
+    --fa-border-padding: 7px 10px 7px 10.25px;
+    --fa-border-radius:12.5px;
+}
+
+
 /**************************** Footer ********************************************/
 /* Mise en place du fond gris et alignement horizontale des sections */
 footer{
