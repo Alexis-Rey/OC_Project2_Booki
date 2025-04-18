@@ -107,11 +107,63 @@ color: black;
     gap: 35px;
 }
 
+/****************Partie titre *****************/
 /* Réglage de la taille du titre H1 et marge avant le paragraphe */
 .selection-title h1{
     font-size: var(--main-size);
     margin-bottom: 8px;
 }
+
+/****************Partie zone de recherche *****************/
+/* Sizing du formulaire complet et alignemnt horizontale */
+#form_selection{
+    display:flex;
+    width:28.15%;
+    height:49px;
+}
+
+/* Mise en place de la bordure et ses arrondis, sizing du texte et taille min  */
+.boutonRecherche{
+    border: 1px;
+    border-radius: 0 15px 15px 0;
+    font-size: var(--subtitle-size);
+    min-width: 132px;
+}
+
+/* centrage du texte et taille police, modif de la bordure de l'input
+calcule de la taille à prendre pour l'input en largeur en fonction des
+autres élements du formulaire */
+#form_selection input{
+    font-size: var(--subtitle-size);
+    width:calc(100% - 182px);
+    text-align: center;
+    border:1px solid var(--main-bg-color);
+}
+
+/* Mise en place de la bordure et ses arrondis et taille min */
+.geoloc{
+    border: 1px;
+    border-radius: 15px 0 0 15px;
+    min-width: 50px;
+}
+
+/* Sizing de l'icone geoloc après essaie avec le sizing fa-lg de Font awesome */
+.fa-location-dot{
+    width: 14px;
+    height: 18px;
+    font-size: 1.25em;
+}
+
+/* Camouflage de la loupe déstiné à la partie mobile */
+#iButton{
+display: none;
+}
+/* Mise en blanc du texte et de la loupe et ajout du fond bleu */
+.boutonRecherche, .fa-magnifying-glass{
+    color: white;
+    background-color: var(--main-color);
+}
+
 /****************Partie info complémentaire *****************/
 /* Mise en ligne des éléments, centrage vertical du p et font-size à 10px
 pour paramètrer la taille de l'icone en héritage et ne pas utiliser
