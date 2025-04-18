@@ -57,10 +57,12 @@ a {
 }
 
 /**************************** Header ********************************************/
-/* Alignement horizontal du logo et du menu; positionnement sur les extremités */
+/* Alignement horizontal du logo et du menu; positionnement sur les extremités 
+et ajout d'une marge inférieur pour la séparation avec le main*/
 header{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 /* Dimensionnement du logo de la page Booki */
@@ -89,6 +91,13 @@ pour la partie responsive*/
     border-top: solid 2px;
     border-bottom: solid 2px transparent;
     
+}
+
+/**************************** Main ********************************************/
+/**************************** Section Recherche ********************************************/
+/* Changement de la couleur de l'icone de géolocalisation */
+.fa-location-dot{
+color: black;
 }
 
 /**************************** Footer ********************************************/
