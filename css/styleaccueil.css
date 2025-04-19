@@ -94,6 +94,14 @@ pour la partie responsive*/
 }
 
 /********************************* Main *****************************************************/
+/* Mise en place d'un espacement entre les différentes section du main, marge entre
+main et footer */
+main{
+    display: flex;
+    gap: 35px;
+    margin-bottom: 35px;
+}
+
 /**************************** Section Recherche ********************************************/
 
 /* Mise en disposition colonne et espacement des éléments */
@@ -141,6 +149,7 @@ autres élements du formulaire */
     border: 1px;
     border-radius: 15px 0 0 15px;
     min-width: 50px;
+    background-color: var(--main-bg-color);
 }
 
 /* Changement de la couleur de l'icone de géolocalisation */
@@ -168,7 +177,6 @@ display: none;
     display: flex;
     gap:15px;
     width: 60%;
-    height: 50px;
 }
 
 /* Ajout des marges intérieur, épaisseur et taille police du label */
@@ -178,13 +186,8 @@ display: none;
     font-size: var(--subtitle-size);
 }
 
-/* Mise en page des boutons de filtre avec nowrap pour empêcher l'icone et le texte de se désaligner
-et fit-content pour empêcher le texte d'overflow */
+/* Mise en page des boutons de filtre avec fit-content pour empêcher le texte d'overflow */
 .boutonFiltre{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: nowrap;
     min-width: fit-content;
     font-size: 17px;
     font-weight: 700;
@@ -255,8 +258,35 @@ h4{
 }
 /********************************* Media queries *****************************/
 /* Le code ci-dessous correspond à la version responsive uniquement */
+/* Responsive Tablette (>=768px et <= 1024) */
+@media (max-width: 1024px) {
+    /***************************** Partie recherche  ************************/
+    /* Mise en auto de la largeur du formulaire fixé à 377px sur ordinateur */
+    #form_selection{
+        width:auto;
+    }
+
+    /**************************** Partie Filtrage **********************/
+    .filtrer label{
+        min-width: 100%;
+        padding: 0;
+    }
+
+    /* Modification de la hauteur des boutons et de la taille police pour tablette */
+    .boutonFiltre{
+        min-height: 50px;
+        font-size: var(--normal-size);
+    }
+
+    .filtrer{
+        min-width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
 /* Responsive Mobile (<768px) */
 @media (max-width: 767.98px) {
+    /******************* Globale ******************************/
    /* Suppresion des marges de côté du contenu mise en place sur tablette et desktop */
     body{
         padding: 0;
@@ -291,6 +321,32 @@ h4{
         border-top: solid 2px transparent;
         border-bottom: solid 2px; 
     }
+
+    /****************************** Modif Main ***********************************/
+    /* Rajout de marge gauch et droite pour le contenu principale sous mobile, viens
+    remplacer les marges globale de body sur les autres formats */
+    main{
+        padding: 0 20px 0 20px;
+    }
+
+    /************************** Modif Section Selection ************************/
+    /****************************** Modif zone de titre ******************************/
+
+
+    /****************************** Modif Filtrage ******************************/
+    /* Espacement entre les éléments en ligne */
+    .filtrer{
+        row-gap: 10px;
+    }
+
+    /*Marge supérieur pour les espacements verticaux et sizing  */
+   .boutonFiltre{
+    margin-top: 20px;
+    width: 48%;
+    font-size: var(--info-size);
+   }
+
+   
 
     /* ***********Modif Footer********************************* */
     /* Mise en disposition colonne et ajustement de l'espacement avec la bordure de 30px */
