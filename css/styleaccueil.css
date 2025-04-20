@@ -142,6 +142,7 @@ autres élements du formulaire */
     width:calc(100% - 182px);
     text-align: center;
     border:1px solid var(--main-bg-color);
+    font-weight: 700;
 }
 
 /* Mise en place de la bordure et ses arrondis et taille min */
@@ -161,16 +162,16 @@ autres élements du formulaire */
     color: black;
 }
 
-/* Camouflage de la loupe déstiné à la partie mobile */
-#iButton{
-display: none;
-}
 /* Mise en blanc du texte et de la loupe et ajout du fond bleu */
 .boutonRecherche, .fa-magnifying-glass{
     color: white;
     background-color: var(--main-color);
 }
 
+ /* Camouflage de la loupe déstiné à la partie mobile */
+#iButton{
+    display: none;
+}
 /******************************* Partie filtrage *******************************************/
 /* Alignement horizontale des élements, inter-espace et sizing du menu */
 .filtrer{
@@ -260,11 +261,9 @@ h4{
 /* Le code ci-dessous correspond à la version responsive uniquement */
 /* Responsive Tablette (>=768px et <= 1024) */
 @media (max-width: 1024px) {
-    /***************************** Partie recherche  ************************/
-    /* Mise en auto de la largeur du formulaire fixé à 377px sur ordinateur */
-    #form_selection{
-        width:auto;
-    }
+
+    /********************** Partie Recherche ***************************/
+
 
     /**************************** Partie Filtrage **********************/
     .filtrer label{
@@ -330,19 +329,51 @@ h4{
     }
 
     /************************** Modif Section Selection ************************/
-    /****************************** Modif zone de titre ******************************/
-
-
-    /****************************** Modif Filtrage ******************************/
-    /* Espacement entre les éléments en ligne */
-    .filtrer{
-        row-gap: 10px;
+    
+    /***************************** Partie recherche  ************************/
+    /* Mise en auto de la largeur du formulaire fixé à 377px sur ordinateur */
+    #form_selection{
+        width:auto;
     }
 
-    /*Marge supérieur pour les espacements verticaux et sizing  */
+    /* Redimensionnement de l'input recherche en prenant en compte la nouvelle largeur du bouton loupe
+    suppresion de l'alignement centré et ajout compensatoire de 24px à gauche,
+    suppresion de la bordure à droite et ajout d'une marge négative pour que les bordures atteignent la loupe */
+    #form_selection input{
+        width: calc(100% - 98px);
+        text-align: left;
+        padding-left: 24px;
+        margin-right: -10px;
+        border-right: none;
+    }
+
+    /* Redimensionnement du bouton en partie mobile et ajout des arrondis des angles */
+    .boutonRecherche{
+        min-width: 49px;
+        border-radius: 15px;
+    }
+
+    /* Apparition de la loupe */
+    #iButton{
+        display: block;
+    }
+    /* Disparition du texte "rechercher" */
+    #txtButton{
+        display: none;
+    }
+
+    /****************************** Modif Filtrage ******************************/
+    /* Espacement entre les éléments en ligne et en colonne */
+    .filtrer{
+        row-gap: 20px;
+        column-gap: 10px;
+    }
+
+    /*Redéfinition de la taille police et de la taille d'un élement par rapport à
+    son parents et la presence d'un gap de 10px entre les deux éléements  */
    .boutonFiltre{
-    margin-top: 20px;
-    width: 48%;
+    
+    width: calc(50% - 5px);
     font-size: var(--info-size);
    }
 
