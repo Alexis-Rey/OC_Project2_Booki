@@ -285,7 +285,7 @@ et effet d'ombre portée */
     margin-bottom: 30px;
 }
 
-/* Réglage des images: image dimensionné pour remplir son parent en gardant son ratio,
+/* Réglage des images: image dimensionné pour remplir son parent en gardant son ratio(empêche la déformation),
 largeur et hauteur, arrondi des angles et bordure  */
 .populaire_Card img {
     object-fit: cover;
@@ -327,8 +327,8 @@ après l'image */
     margin-top: 5px;
 }
 
-/* Mise en gras du "€" */
-#euro{
+/* Mise en gras du "€" et du "afficher plus" de la section hébergement */
+#euro, #plus_info{
     font-weight: 700;
 }
 
@@ -350,7 +350,7 @@ de la maquette */
     height: 12px;
     font-size: 0.75em;
 }
-
+/* Même chose sur l'icone de statistique */
 .fa-chart-line{
     width: 18px;
     height: 15.75px;

@@ -76,11 +76,84 @@
                 <!-- Section d'hébergements -->
                 <section id="hebergement">
                     <h2>Hébergements à Marseille</h2>
+
+                    <!-- Contenu princpale de la section -->
                     <div class="hebergement_contenu">
                         
+                        <!-- 1ère Rangée -->
+                        <div class="hebergement_rangee1">
+                            <!-- Première carte d'hébergement -->
+                            <a href="" class="hebergement_Lien" id="heb_Card1">
+                                <article class="hebergement_Card">
+                                    <img src="images/hebergements/fred-kleber.jpg" alt="Image de la chambre d'hôtel 'Hôtel du port'">
+                                    <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
+                                    <div class="hebergement_Card_Info">
+                                        <div class="card_Info_Titre">
+                                            <h3>Hôtel du port</h3>
+                                            <p>Nuit à partir de 52<span id="euro">€</span></p>
+                                        </div>
+                                        <!-- Système de notation -->
+                                        <form class="card_Info_Note">
+                                            <input type="radio" id="card4_star5" name="card4_note" value="5"><label for="card4_star5"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
+                                            <input type="radio" id="card4_star4" name="card4_note" value="4"><label for="card4_star4"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
+                                            <input type="radio" id="card4_star3" name="card4_note" value="3"><label for="card4_star3"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
+                                            <input type="radio" id="card4_star2" name="card4_note" value="2"><label for="card4_star2"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
+                                            <input type="radio" id="card4_star1" name="card4_note" value="1"><label for="card4_star1"><i class=" fa-solid fa-star neutral-star" aria-hidden="true"></i></label>
+                                            <span class="sr-only">Note de 4 sur 5 étoiles</span>
+                                        </form>
+                                    </div>
+                                </article>
+                            </a>
 
+                            <!-- Deuxième carte d'hébergement -->
+                            <a href="" class="hebergement_Lien" id="heb_Card2">
+                                <article class="hebergement_Card">
+                                    <img src="images/hebergements/febrian-zakaria.jpg" alt="Image de la chambre d'hôtel 'Hôtel Chez Amina'">
+                                    <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
+                                    <div class="hebergement_Card_Info">
+                                        <div class="card_Info_Titre">
+                                            <h3>Hôtel Chez Amina</h3>
+                                            <p>Nuit à partir de 96<span id="euro">€</span></p>
+                                        </div>
+                                        <!-- Système de notation -->
+                                        <form class="card_Info_Note">
+                                            <input type="radio" id="card5_star5" name="card5_note" value="5"><label for="card5_star5"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
+                                            <input type="radio" id="card5_star4" name="card5_note" value="4"><label for="card5_star4"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
+                                            <input type="radio" id="card5_star3" name="card5_note" value="3"><label for="card5_star3"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
+                                            <input type="radio" id="card5_star2" name="card5_note" value="2"><label for="card5_star2"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
+                                            <input type="radio" id="card5_star1" name="card5_note" value="1"><label for="card5_star1"><i class=" fa-solid fa-star neutral-star" aria-hidden="true"></i></label>
+                                            <span class="sr-only">Note de 4 sur 5 étoiles</span>
+                                        </form>
+                                    </div>
+                                </article>
+                            </a>
+
+                            <!-- Troisième carte d'hébergement -->
+                            <a href="" class="hebergement_Lien" id="heb_Card3">
+                                <article class="hebergement_Card">
+                                    <img src="images/hebergements/reisetopia.jpg" alt="Image de la chambre d'hôtel 'Hôtel Les mouettes'">
+                                    <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
+                                    <div class="hebergement_Card_Info">
+                                        <div class="card_Info_Titre">
+                                            <h3>Hôtel Les mouettes</h3>
+                                            <p>Nuit à partir de 76<span id="euro">€</span></p>
+                                        </div>
+                                        <!-- Système de notation -->
+                                        <form class="card_Info_Note">
+                                            <input type="radio" id="card6_star5" name="card6_note" value="5"><label for="card6_star5"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
+                                            <input type="radio" id="card6_star4" name="card6_note" value="4"><label for="card6_star4"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
+                                            <input type="radio" id="card6_star3" name="card6_note" value="3"><label for="card6_star3"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
+                                            <input type="radio" id="card6_star2" name="card6_note" value="2"><label for="card6_star2"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
+                                            <input type="radio" id="card6_star1" name="card6_note" value="1"><label for="card6_star1"><i class=" fa-solid fa-star neutral-star" aria-hidden="true"></i></label>
+                                            <span class="sr-only">Note de 4 sur 5 étoiles</span>
+                                        </form>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
                     </div>
-                    <a href="">Afficher plus</a>
+                    
+                    <a href="" id="plus_info">Afficher plus</a>
                 </section>
 
                 <!-- Mise en place de la partie indépendante concernant les hébergements les plus populaires -->
@@ -92,7 +165,7 @@
                         <i class="fa-solid fa-chart-line"><span class="sr-only">Statistiques</span></i>
                     </div>
 
-                    <!-- Première carte d'hôtel -->
+                    <!-- Première carte d'hôtel populaire -->
                     <a href="" class="populaire_Lien" id="pop_Card1">
                         <article class="populaire_Card">
                             <img src="images/hebergements/emile-guillemot.jpg" alt="Image de la chambre d'hôtel 'Le soleil du matin'">
@@ -115,7 +188,7 @@
                         </article>
                     </a>
 
-                    <!-- Seconde carte d'hôtel -->
+                    <!-- Seconde carte d'hôtel  populaire -->
                     <a href="" class="populaire_Lien" id="pop_Card2">
                         <article class="populaire_Card">
                             <img src="images/hebergements/aw-creative.jpg" alt="Image de la chambre d'hôte 'Au coeur de l'eau'">
@@ -138,7 +211,7 @@
                         </article>
                     </a>
 
-                    <!-- Troisème carte d'hôtel -->
+                    <!-- Troisème carte d'hôtel  populaire -->
                     <a href="" class="populaire_Lien" id="pop_Card3">
                         <article class="populaire_Card">
                             <img src="images/hebergements/febrian-zakaria2.jpg" alt="Image de la chambre d'hôtel 'Bleu et Blanc'">
