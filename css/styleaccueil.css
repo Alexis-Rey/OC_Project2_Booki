@@ -47,6 +47,25 @@ a {
     text-decoration: none;
 }
 
+/* Paramètrage de la taille et épaisseur des titres */
+/* Réglage de la taille du titre H1 et marge avant le paragraphe */
+.selection-title h1{
+    font-size: var(--main-size);
+    margin-bottom: 8px;
+}
+
+h2{
+    font-size: var(--main-size);
+}
+
+h3{
+    font-size: var(--normal-size);
+}
+
+h4{
+    font-size: var(--subtitle-size);
+}
+
 /**************************** Partie commune ********************************************/
 /* Ajustement de la taille de police pour le menu de navigation et les liens du pied-de-page */
 /* Suppression de la marge intérieur gauche provenant
@@ -95,9 +114,10 @@ pour la partie responsive*/
 
 /********************************* Main *****************************************************/
 /* Mise en place d'un espacement entre les différentes section du main, marge entre
-main et footer */
+main et footer et positionnement vertical des élements */
 main{
     display: flex;
+    flex-direction: column;
     gap: 35px;
     margin-bottom: 35px;
 }
@@ -109,13 +129,6 @@ main{
     display: flex;
     flex-direction: column;
     gap: 35px;
-}
-
-/********************************Partie titre ********************************************/
-/* Réglage de la taille du titre H1 et marge avant le paragraphe */
-.selection-title h1{
-    font-size: var(--main-size);
-    margin-bottom: 8px;
 }
 
 /********************************** Partie zone de recherche *****************************/
@@ -232,6 +245,119 @@ le sizing Font Awesome  */
 }
 
 
+/**************************** Section Hébergements&Populaires ********************************************/
+/* Alignement horizontale de la section hébergement et l'aside populaire
+avec un espacement */
+.hebergement_et_pop{
+    display: flex;
+    flex-direction: row;
+    gap:40px;
+}
+
+/* Sizing de la section par rapport à l'aside */
+#hebergement{
+    flex: 2;
+}
+
+/* Intégration du fond de couleur, marge interne et arrondi des angles de 
+la section et de l'aside */
+#hebergement, .populaire{
+    background-color: var(--main-bg-color);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+/**************************** Section Populaires ********************************************/
+
+/* Réglage des card: hauteur et largeur, arrondis des angles, couleur d'arrière-plan
+et effet d'ombre portée */
+.populaire_Lien{
+    display: flex;
+    width: 369px;
+    height: 146px;
+    border-radius: 20px;
+    background-color: white;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+/* Espacement entre les cards ainsi que la partie titre */
+.populaire_TitreIcone, #pop_Card1, #pop_Card2{
+    margin-bottom: 30px;
+}
+
+/* Réglage des images: image dimensionné pour remplir son parent en gardant son ratio,
+largeur et hauteur, arrondi des angles et bordure  */
+.populaire_Card img {
+    object-fit: cover;
+    width: 118px;
+    height: 136px;
+    border-radius: 20px 0 0 20px;
+    border: solid 5px white;
+    border-right: none;
+}
+
+/* Alignement horizontale du titre et de l'icone et espacement */
+.populaire_TitreIcone{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Alignement horizontale au sein des cards de l'image et des informations */
+.populaire_Card{
+    display: flex;
+    gap: 15px;
+    width:100%;
+}
+
+/* Mise en colonne de la partie information concernant la chambre d'hôtel,
+marge intérieur et sizing pour qu'elle occupe tout l'espace restant
+après l'image */
+.populaire_Card_Info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1.5;
+    padding: 10px 5px 5px 0;
+}
+
+/* Taille police du paragraphe et espacement par rapport au titre  */
+.card_Info_Titre p{
+    font-size: var(--info-size);
+    margin-top: 5px;
+}
+
+/* Mise en gras du "€" */
+#euro{
+    font-weight: 700;
+}
+
+/* Epsacement entre les étoiles de notation */
+.card_Info_Note{
+    display: flex;
+    gap: 2px;
+}
+
+/* Désactivation des input radio pour respecter une représantation purement graphique
+de la maquette */
+.card_Info_Note input{
+    display: none;
+}
+
+/* Sizing pour les étoiles sans utilisation du fa-xs de Font Awesome */
+.fa-star{
+    width: 12px;
+    height: 12px;
+    font-size: 0.75em;
+}
+
+.fa-chart-line{
+    width: 18px;
+    height: 15.75px;
+    font-size: 1.15em;
+}
+
+
 /**************************** Footer ********************************************/
 /* Mise en place du fond gris et alignement horizontale des sections */
 footer{
@@ -254,9 +380,6 @@ h4, .listeFooter li{
     margin-bottom: 15px;
 }
 
-h4{
-    font-size: var(--subtitle-size);
-}
 /********************************* Media queries *****************************/
 /* Le code ci-dessous correspond à la version responsive uniquement */
 /* Responsive Tablette (>=768px et <= 1024) */
