@@ -67,6 +67,8 @@ h4{
 }
 
 /**************************** Partie commune ********************************************/
+/****************************************************************************************/
+
 /* Ajustement de la taille de police pour le menu de navigation et les liens du pied-de-page */
 /* Suppression de la marge intérieur gauche provenant
     du comportement par défault d'une liste ul ou ol */
@@ -75,7 +77,7 @@ h4{
     padding-left: 0;
 }
 
-/**************************** Header ********************************************/
+/**************************** HEADER ********************************************/
 /* Alignement horizontal du logo et du menu; positionnement sur les extremités 
 et ajout d'une marge inférieur pour la séparation avec le main*/
 header{
@@ -112,7 +114,9 @@ pour la partie responsive*/
     
 }
 
-/********************************* Main *****************************************************/
+/********************************* MAIN *****************************************************/
+/********************************************************************************************/
+
 /* Mise en place d'un espacement entre les différentes section du main, marge entre
 main et footer et positionnement vertical des élements */
 main{
@@ -122,7 +126,8 @@ main{
     margin-bottom: 35px;
 }
 
-/**************************** Section Recherche ********************************************/
+/**************************** Section RECHERCHE ********************************************/
+/*******************************************************************************************/
 
 /* Mise en disposition colonne et espacement des éléments */
 .selection{
@@ -245,7 +250,9 @@ le sizing Font Awesome  */
 }
 
 
-/**************************** Section Hébergements&Populaires ********************************************/
+/**************************** Section HEBERGEMENTS & POPULAIRES ********************************************/
+/*********************************************************************************************************/
+
 /* Alignement horizontale de la section hébergement et l'aside populaire
 avec un espacement */
 .hebergement_et_pop{
@@ -254,9 +261,13 @@ avec un espacement */
     gap:40px;
 }
 
-/* Sizing de la section par rapport à l'aside */
+/* Sizing de la section par rapport à l'aside, mise en colonne avec du flexbox pour 
+ajouter un gap entre les élements */
 #hebergement{
     flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 /* Intégration du fond de couleur, marge interne et arrondi des angles de 
@@ -267,10 +278,93 @@ la section et de l'aside */
     border-radius: 15px;
 }
 
-/**************************** Section Populaires ********************************************/
+/* Désactivation des input radio pour respecter une représantation purement graphique
+de la maquette pour les étoiles hébergements et populaires */
+.card_Info_Note input, .heb_card_Info_Note input{
+    display: none;
+}
+
+/**************************** Section Hébergement ********************************************/
+/********************************************************************************************/
+
+/* Mise en colonne des deux rangées séparé par 30px et sizing de la taille totale de la boite */
+.hebergement_contenu{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 444.5px;
+}
+
+/* Rajout d'espacement horizontale entre les différentes cards et attribution d'une hauteur
+qui représente la moitié de l'espace disponible par le conteneur parent */
+.hebergement_rangee1, .hebergement_rangee2{
+    display: flex;
+    gap: 30px;
+    height: 50%;
+}
+
+/* Mise en forme des liens contenant les cards d'hébergements et ajustement de la largeur pour 
+correspondre à 1/3 de la tailel disponible */
+.hebergement_Lien{
+    display: flex;
+    width: 33%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: white;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+/* Ajustement de la largeur des articles pour prendre tout l'espace disponible soit les 
+33% définit au-dessus */
+.hebergement_Card{
+    width: 100%;
+}
+
+/* Sizing et mise en forme de l'image avec border-box pour qu'elle reste dans son conteneur */
+.hebergement_Card img{
+    object-fit: cover;
+    width: 100%;
+    height: 124px;
+    border-radius: 20px 20px 0 0;
+    border: solid 5px white;
+    box-sizing: border-box;
+}
+
+/* Espacement interne de la zone d'info  */
+.hebergement_Card_Info{
+    padding: 0 15px 0 15px;
+}
+
+/* Taille police du paragraphe, et ajout d'une marge supérieur et inférieur à 8px afin d'éviter
+de mettre son parent en flex uniquement pour ajouter un gap  */
+.heb_card_Info_Titre p{
+    font-size: var(--info-size);
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/* Gestion des étoiles de notation, taille, disposition et espacement */
+.heb_card_Info_Note{
+    display: flex;
+    gap: 2.38px;
+}
+
+.heb_card_Info_Note .fa-star{
+    font-size: 0.85em;
+    width: 14.29px;
+    height: 13.25px;
+}
+
+/* Changement de la taille de la police */
+#plus_info{
+    font-size: var(--subtitle-size);
+}
+
+/**************************** Aside Populaires ********************************************/
+/********************************************************************************************/
 
 /* Réglage des card: hauteur et largeur, arrondis des angles, couleur d'arrière-plan
-et effet d'ombre portée */
+et effet d'ombre portée, pour le display ici on a le choix entre flex et block */
 .populaire_Lien{
     display: flex;
     width: 369px;
@@ -286,11 +380,13 @@ et effet d'ombre portée */
 }
 
 /* Réglage des images: image dimensionné pour remplir son parent en gardant son ratio(empêche la déformation),
-largeur et hauteur, arrondi des angles et bordure  */
+largeur et hauteur, arrondi des angles et bordure, et border-box pour que l'image et bordure rentre
+dans le conteneur  */
 .populaire_Card img {
     object-fit: cover;
-    width: 118px;
-    height: 136px;
+    width: 123px;
+    height: 146px;
+    box-sizing: border-box;
     border-radius: 20px 0 0 20px;
     border: solid 5px white;
     border-right: none;
@@ -338,12 +434,6 @@ après l'image */
     gap: 2px;
 }
 
-/* Désactivation des input radio pour respecter une représantation purement graphique
-de la maquette */
-.card_Info_Note input{
-    display: none;
-}
-
 /* Sizing pour les étoiles sans utilisation du fa-xs de Font Awesome */
 .fa-star{
     width: 12px;
@@ -358,7 +448,9 @@ de la maquette */
 }
 
 
-/**************************** Footer ********************************************/
+/************************************** FOOTER *************************************************/
+/***********************************************************************************************/
+
 /* Mise en place du fond gris et alignement horizontale des sections */
 footer{
     display: flex;
@@ -380,7 +472,9 @@ h4, .listeFooter li{
     margin-bottom: 15px;
 }
 
-/********************************* Media queries *****************************/
+/********************************* MEDIA QUERIES *****************************/
+/******************************************************************************/
+
 /* Le code ci-dessous correspond à la version responsive uniquement */
 /* Responsive Tablette (>=768px et <= 1024) */
 @media (max-width: 1024px) {
