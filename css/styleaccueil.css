@@ -358,6 +358,7 @@ de mettre son parent en flex uniquement pour ajouter un gap  */
 /* Changement de la taille de la police */
 #plus_info{
     font-size: var(--subtitle-size);
+
 }
 
 /**************************** Aside Populaires ********************************************/
@@ -447,6 +448,52 @@ après l'image */
     font-size: 1.15em;
 }
 
+/*********************************** SECTION ACTIVITES ********************************************/
+/********************************************************************************************/
+
+/* Mise en place des marges intérieur de la section */
+#activites{
+    padding: 30px;
+}
+
+/* Alignement horizontale des éléments de la rangée avec espacement des élements et ajout
+d'une marge au-dessus avec le titre */
+.activites_rangee{
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Sizing des cards d'activités et effet d'ombrage  */
+.activites_Lien{
+    display: flex;
+    width: 25%;
+    height: 439px;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+/* Mise en colonne du contenu des cards activités et taille ajuster à son conteneur */
+.activites_Card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sizing en largeur et hauteur de l'image, arrondis des angles supérieur et redimensionnement en 
+gardant le ratio de taille initiale de l'image */
+.activites_Card img{
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Espacement interne du titre, couleur de fond et arrondi des angles inférieurs */
+.activites_Card h3{
+    padding: 20px 19px 20px 19px;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+}
 
 /************************************** FOOTER *************************************************/
 /***********************************************************************************************/
