@@ -23,10 +23,7 @@ et centrage auto du contenu pour les écrans grande taille(>1440px) */
 body{
     max-width: 1440px;
     min-width: 320px;
-    /* prise en compte la bordure et le remplissage dans la valeur définie pour la largeur et la hauteur */
-    box-sizing: border-box;
-    padding: 0 50px;
-    margin: auto;
+    padding: 0 50px;  
 }
 
 /* Affectation de la main color sur la classe fa-solid déstiné 
@@ -523,13 +520,24 @@ h4, .listeFooter li{
 /******************************************************************************/
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
-/* Responsive Tablette (>=768px et <= 1024) */
+/************************ Responsive Grand ordinateur (>1440px) **********************/
+/* Critère N°3 de la spécification technique de la note de synthèse */
+@media (min-width: 1440.1px){
+    body{
+        /* prise en compte la bordure et le remplissage dans la valeur définie pour 
+        la largeur et la hauteur */
+    box-sizing: border-box;
+    margin: auto;
+    }
+}
+
+/************************ Responsive Tablette (>=768px et <= 1024) **********************/
 @media (max-width: 1024px) {
 
-    /********************** Partie Recherche ***************************/
-
+    /********************** SECTION RECHERCHE ***************************/
 
     /**************************** Partie Filtrage **********************/
+    /* Sizing du label pour qu'il occupe une ligne entière comme un block  */
     .filtrer label{
         min-width: 100%;
         padding: 0;
@@ -541,14 +549,46 @@ h4, .listeFooter li{
         font-size: var(--normal-size);
     }
 
+    /* Sizing du conteneur pour qu'il occupe tout l'espace disponible et remise à la ligne
+    des boutons débordants */
     .filtrer{
         min-width: 100%;
         flex-wrap: wrap;
     }
+
+    /**************************** SECTION HEBERGEMENT ET POPULAIRE **********************/
+    .hebergement_et_pop{
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .populaire{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .populaire_TitreIcone{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #pop_Card1, #pop_Card2{
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+
+    .populaire_Lien{
+        width: calc((100% - 40px) / 3);
+    }
+
+    .populaire_Card img{
+        width: 91.67px;
+    }
 }
 
-/* Responsive Mobile (<768px) */
-@media (max-width: 767.98px) {
+/***********************  Responsive Mobile (<768px) ************************************/
+@media (max-width: 767.99px) {
     /******************* Globale ******************************/
    /* Suppresion des marges de côté du contenu mise en place sur tablette et desktop */
     body{
