@@ -1,8 +1,10 @@
 /****** General ***********/
-/* Mise en place de la police globale du site et mise à 0 des marges notamment pour le body*/
+/* Mise en place de la police globale du site et mise à 0 des marges notamment pour le body,
+utilisation de scrool-behavior pour un défilement moins sec avec les liens d'ancres du menu nav*/
 * {
     font-family: 'Raleway', sans-serif;
     margin:0;
+    scroll-behavior: smooth;
 }
 
 /* Mise en place de la charte graphique du site au niveau 
@@ -44,6 +46,11 @@ a {
     text-decoration: none;
 }
 
+/* Mise en forme du curseur souris en pointeur pour les boutons */
+button{
+    cursor: pointer;
+}
+
 /* Paramètrage de la taille et épaisseur des titres */
 /* Réglage de la taille du titre H1 et marge avant le paragraphe */
 .selection-title h1{
@@ -59,7 +66,7 @@ h3{
     font-size: var(--normal-size);
 }
 
-h4{
+.sectionFooter h2{
     font-size: var(--subtitle-size);
 }
 
@@ -97,18 +104,18 @@ header{
     gap:68px;
 }
 
-/* Suppression des puces et ajout d'un espacement pour placer la future bordure */
+/* Suppression des puces et ajout d'un espacement, Mise en page de la bordure qui apparait
+au survol du menu ainsi que d'une bordure en-dessous camouflé pour la partie responsive */
 #menuNav li{
     list-style-type: none;
     padding-top: 16px;
+    border-top: solid 2px transparent;
+    border-bottom: solid 2px transparent;
 }
-/* Mise en page de la bordure au survol du menu ainsi que d'une bordure en-dessous camouflé
-pour la partie responsive*/
+/* Changement des couleurs au survol*/
 #menuNav li:hover{
     color:var(--main-color);
-    border-top: solid 2px;
-    border-bottom: solid 2px transparent;
-    
+    border-top-color: var(--main-color);
 }
 
 /********************************* MAIN *****************************************************/
@@ -160,12 +167,15 @@ autres élements du formulaire */
     font-weight: 700;
 }
 
-/* Mise en place de la bordure et ses arrondis et taille min */
+/* Mise en place de la bordure et ses arrondis et taille min, centrage de l'icone 
+dans le label */
 .geoloc{
     border: 1px;
     border-radius: 15px 0 0 15px;
     min-width: 50px;
     background-color: var(--main-bg-color);
+    padding-top: 15px;
+    text-align: center;
 }
 
 /* Changement de la couleur de l'icone de géolocalisation */
@@ -173,7 +183,7 @@ autres élements du formulaire */
 .fa-location-dot{
     width: 14px;
     height: 18px;
-    font-size: 1.25em;
+    font-size: 1em;
     color: black;
 }
 
@@ -195,8 +205,8 @@ autres élements du formulaire */
     width: 60%;
 }
 
-/* Ajout des marges intérieur, épaisseur et taille police du label */
-.filtrer label{
+/* Ajout des marges intérieur, épaisseur et taille police du paragraphe */
+.filtrer p{
     padding: 14.5px 0 14.5px 0;
     font-weight:700;
     font-size: var(--subtitle-size);
@@ -224,26 +234,28 @@ autres élements du formulaire */
 }
 
 /************************ Partie info complémentaire *************************************/
-/* Mise en ligne des éléments, centrage vertical du p et font-size à 10px
-pour paramètrer la taille de l'icone en héritage et ne pas utiliser
+/*  font-size à 10px pour paramètrer la taille de l'icone en héritage et ne pas utiliser
 le sizing Font Awesome  */
-.info{
-    display: flex;
-    align-items: center; 
-    font-size: 10px;
+.info i{
+    font-size: 12px;
 }
 
-/* On remets la taille des paragraphes influencer ci-dessus */
 .info p, .selection-title p{
     font-size: var(--normal-size);
+}
+
+/* sans le div j'ai un jeu dans l'alignement verticale entre le i et le p si je mets le <i> dans le <p> directement */
+.info{
+    display: flex;
+    align-items: center;
 }
 
 /* Paramètrage de l'icone, marge avec le <p>, mise en place de la bordure en cercle */
 .fa-info{
     margin-right: 10px;
     --fa-border-width: 1px;
-    --fa-border-padding: 7px 10px 7px 10.25px;
-    --fa-border-radius:12.5px;
+    --fa-border-padding: 7px 10px 7px 10px;
+    --fa-border-radius: 13px;
 }
 
 
@@ -342,14 +354,11 @@ de mettre son parent en flex uniquement pour ajouter un gap  */
 
 /* Gestion des étoiles de notation, taille, disposition et espacement */
 .heb_card_Info_Note{
-    display: flex;
-    gap: 2.38px;
+    
 }
 
 .heb_card_Info_Note .fa-star{
     font-size: 0.85em;
-    width: 14.29px;
-    height: 13.25px;
 }
 
 /* Changement de la taille de la police */
@@ -436,7 +445,6 @@ après l'image */
 .fa-star{
     width: 12px;
     height: 12px;
-    font-size: 0.75em;
 }
 /* Même chose sur l'icone de statistique */
 .fa-chart-line{
@@ -508,11 +516,13 @@ footer{
     width: 33%;
 }
 
+/* Suppression des puces */
 .listeFooter li{
     list-style-type: none;
 }
 
-h4, .listeFooter li{
+/* Espacement entre les élements du footer */
+.sectionFooter h2, .listeFooter li{
     margin-bottom: 15px;
 }
 
@@ -537,8 +547,8 @@ h4, .listeFooter li{
     /********************** SECTION RECHERCHE ***************************/
 
     /**************************** Partie Filtrage **********************/
-    /* Sizing du label pour qu'il occupe une ligne entière comme un block  */
-    .filtrer label{
+    /* Sizing du p pour qu'il occupe une ligne entière comme un block  */
+    .filtrer p{
         min-width: 100%;
         padding: 0;
     }
@@ -621,8 +631,8 @@ h4, .listeFooter li{
 
     /* Déplacement de la barre en bas */
     #menuNav li:hover{
-        border-top: solid 2px transparent;
-        border-bottom: solid 2px; 
+        border-bottom-color: var(--main-color);
+        border-top-color: transparent;
     }
 
     /****************************** Modif Main ***********************************/

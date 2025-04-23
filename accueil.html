@@ -25,7 +25,7 @@
         <!-- En-tête de la page comprenant le logo et la
          navigation -->
         <header>
-            <a href="accueil.html"><img class="logoBooki" src="images/logo/Booki.png" alt="Logo d'accueil de l'agence de voyage Booki"></a>
+            <a href="/"><img class="logoBooki" src="images/logo/Booki.png" alt="Logo d'accueil de l'agence de voyage Booki"></a>
             <nav>
                 <ul id="menuNav">
                     <li><a href="#hebergement">Hébergements</a></li>
@@ -46,8 +46,8 @@
 
                 <!-- Formulaire de recherche de destination -->
                  
-                    <form id="form_selection">
-                        <button class="geoloc"><i class=" fa-solid fa-location-dot" aria-hidden="true"></i><span class="sr-only">Action: Votre localisation actuelle</span></button>
+                    <form id="form_selection" action="#" method="get">
+                        <label for="recherche" class="geoloc"><i class=" fa-solid fa-location-dot" aria-hidden="true"></i><span class="sr-only">Action: Votre localisation actuelle</span></label>
                         <input type="text" name="recherche" id="recherche" placeholder="Ville de votre choix" value="Marseille, France">
                         <button class="boutonRecherche"><span id="txtButton">Rechercher</span><span id="iButton"><i class="fa-solid fa-magnifying-glass"></i></span></button>
                     </form>
@@ -55,26 +55,24 @@
 
                 <!-- Zone de filtres -->
                 <div class="filtrer">
-                    <label for="boutonFiltre">Filtres</label>  
-                        <button class="boutonFiltre" id="boutonFiltre"><i class="fa-lg fa-solid fa-money-bill-wave" aria-hidden="true"></i>Économique</button>
+                    <p>Filtres</p>  
+                        <button class="boutonFiltre"><i class="fa-lg fa-solid fa-money-bill-wave" aria-hidden="true"></i>Économique</button>
                         <button class="boutonFiltre"><i class="fa-lg fa-solid fa-person" aria-hidden="true"></i>Familial</button>
                         <button class="boutonFiltre"><i class="fa-lg fa-solid fa-heart" aria-hidden="true"></i>Romantique</button>
                         <button class="boutonFiltre"><i class="fa-lg fa-solid fa-fire" aria-hidden="true"></i>Nos pépites</button>
                 </div>
 
                 <!-- Information complémentaire -->
-                <div class="info">
-                    <i class="fa-solid fa-info fa-border" aria-hidden="true"></i>
-                    <span class="sr-only">Information complémentaire</span>
-                    <p>Plus de 500 logements sont disponibles dans cette ville</p>
+                 <div class="info">
+                <i class="fa-solid fa-info fa-border" aria-hidden="true"></i><p>Plus de 500 logements sont disponibles dans cette ville</p>
                 </div>
             </section>
 
             <!-- Mise en place du contenu concernant l'hébergement -->
-            <div class="hebergement_et_pop">
+            <section class="hebergement_et_pop">
 
                 <!-- Section d'hébergements -->
-                <section id="hebergement">
+                <div id="hebergement">
                     <h2>Hébergements à Marseille</h2>
 
                     <!-- Contenu princpale de la section -->
@@ -84,7 +82,7 @@
                         <div class="hebergement_rangee1">
 
                             <!-- Première carte d'hébergement -->
-                            <a href="" class="hebergement_Lien" id="heb_Card1">
+                            <a href="#" class="hebergement_Lien" id="heb_Card1">
                                 <article class="hebergement_Card">
                                     <img src="images/hebergements/fred-kleber.jpg" alt="Image de la chambre d'hôtel 'Hôtel du port'">
                                     <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
@@ -94,20 +92,20 @@
                                             <p>Nuit à partir de 52<span id="euro">€</span></p>
                                         </div>
                                         <!-- Système de notation -->
-                                        <form class="heb_card_Info_Note">
-                                            <input type="radio" id="card4_star5" name="card4_note" value="5"><label for="card4_star5"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card4_star4" name="card4_note" value="4"><label for="card4_star4"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card4_star3" name="card4_note" value="3"><label for="card4_star3"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card4_star2" name="card4_note" value="2"><label for="card4_star2"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card4_star1" name="card4_note" value="1"><label for="card4_star1"><i class=" fa-solid fa-star neutral-star" aria-hidden="true"></i></label>
+                                        <div class="heb_card_Info_Note">
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star neutral-star" aria-hidden="true"></i>
                                             <span class="sr-only">Note de 4 sur 5 étoiles</span>
-                                        </form>
+                                        </div>
                                     </div>
                                 </article>
                             </a>
 
                             <!-- Deuxième carte d'hébergement -->
-                            <a href="" class="hebergement_Lien" id="heb_Card2">
+                            <a href="#" class="hebergement_Lien" id="heb_Card2">
                                 <article class="hebergement_Card">
                                     <img src="images/hebergements/febrian-zakaria.jpg" alt="Image de la chambre d'hôtel 'Hôtel Chez Amina'">
                                     <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
@@ -117,20 +115,20 @@
                                             <p>Nuit à partir de 96<span id="euro">€</span></p>
                                         </div>
                                         <!-- Système de notation -->
-                                        <form class="heb_card_Info_Note">
-                                            <input type="radio" id="card5_star5" name="card5_note" value="5"><label for="card5_star5"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card5_star4" name="card5_note" value="4"><label for="card5_star4"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card5_star3" name="card5_note" value="3"><label for="card5_star3"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card5_star2" name="card5_note" value="2"><label for="card5_star2"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card5_star1" name="card5_note" value="1"><label for="card5_star1"><i class=" fa-solid fa-star neutral-star" aria-hidden="true"></i></label>
+                                        <div class="heb_card_Info_Note">
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star neutral-star" aria-hidden="true"></i>
                                             <span class="sr-only">Note de 4 sur 5 étoiles</span>
-                                        </form>
+                                        </div>
                                     </div>
                                 </article>
                             </a>
 
                             <!-- Troisième carte d'hébergement -->
-                            <a href="" class="hebergement_Lien" id="heb_Card3">
+                            <a href="#" class="hebergement_Lien" id="heb_Card3">
                                 <article class="hebergement_Card">
                                     <img src="images/hebergements/reisetopia.jpg" alt="Image de la chambre d'hôtel 'Hôtel Les mouettes'">
                                     <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
@@ -140,14 +138,14 @@
                                             <p>Nuit à partir de 76<span id="euro">€</span></p>
                                         </div>
                                         <!-- Système de notation -->
-                                        <form class="heb_card_Info_Note">
-                                            <input type="radio" id="card6_star5" name="card6_note" value="5"><label for="card6_star5"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card6_star4" name="card6_note" value="4"><label for="card6_star4"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card6_star3" name="card6_note" value="3"><label for="card6_star3"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card6_star2" name="card6_note" value="2"><label for="card6_star2"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card6_star1" name="card6_note" value="1"><label for="card6_star1"><i class=" fa-solid fa-star neutral-star" aria-hidden="true"></i></label>
+                                        <div class="heb_card_Info_Note">
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star neutral-star" aria-hidden="true"></i>
                                             <span class="sr-only">Note de 4 sur 5 étoiles</span>
-                                        </form>
+                                        </div>
                                     </div>
                                 </article>
                             </a>
@@ -157,7 +155,7 @@
                         <div class="hebergement_rangee2">
 
                             <!-- Quatrième carte d'hébergement -->
-                            <a href="" class="hebergement_Lien" id="heb_Card4">
+                            <a href="#" class="hebergement_Lien" id="heb_Card4">
                                 <article class="hebergement_Card">
                                     <img src="images/hebergements/annie-spratt.jpg" alt="Image de la chambre d'hôtel 'Hôtel de la mer'">
                                     <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
@@ -167,20 +165,20 @@
                                             <p>Nuit à partir de 46<span id="euro">€</span></p>
                                         </div>
                                         <!-- Système de notation -->
-                                        <form class="heb_card_Info_Note">
-                                            <input type="radio" id="card7_star5" name="card7_note" value="5"><label for="card7_star5"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card7_star4" name="card7_note" value="4"><label for="card7_star4"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card7_star3" name="card7_note" value="3"><label for="card7_star3"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card7_star2" name="card7_note" value="2"><label for="card7_star2"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card7_star1" name="card7_note" value="1"><label for="card7_star1"><i class=" fa-solid fa-star neutral-star" aria-hidden="true"></i></label>
+                                        <div class="heb_card_Info_Note">
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star neutral-star" aria-hidden="true"></i>
                                             <span class="sr-only">Note de 4 sur 5 étoiles</span>
-                                        </form>
+                                        </div>
                                     </div>
                                 </article>
                             </a>
 
                             <!-- Cinquième carte d'hébergement -->
-                            <a href="" class="hebergement_Lien" id="heb_Card5">
+                            <a href="#" class="hebergement_Lien" id="heb_Card5">
                                 <article class="hebergement_Card">
                                     <img src="images/hebergements/marcus-loke.jpg" alt="Image de l'Auberge 'la Canebière'">
                                     <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
@@ -190,20 +188,20 @@
                                             <p>Nuit à partir de 25<span id="euro">€</span></p>
                                         </div>
                                         <!-- Système de notation -->
-                                        <form class="heb_card_Info_Note">
-                                            <input type="radio" id="card8_star5" name="card8_note" value="5"><label for="card8_star5"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card8_star4" name="card8_note" value="4"><label for="card8_star4"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card8_star3" name="card8_note" value="3"><label for="card8_star3"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card8_star2" name="card8_note" value="2"><label for="card8_star2"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card8_star1" name="card8_note" value="1"><label for="card8_star1"><i class=" fa-solid fa-star neutral-star" aria-hidden="true"></i></label>
+                                        <div class="heb_card_Info_Note">
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star neutral-star" aria-hidden="true"></i>
                                             <span class="sr-only">Note de 4 sur 5 étoiles</span>
-                                        </form>
+                                        </div>
                                     </div>
                                 </article>
                             </a>
 
                             <!-- Sixième carte d'hébergement -->
-                            <a href="" class="hebergement_Lien" id="heb_Card6">
+                            <a href="#" class="hebergement_Lien" id="heb_Card6">
                                 <article class="hebergement_Card">
                                     <img src="images/hebergements/nicate-lee.jpg" alt="Image de l'auberge 'Le Panier'">
                                     <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
@@ -213,14 +211,14 @@
                                             <p>Nuit à partir de 23<span id="euro">€</span></p>
                                         </div>
                                         <!-- Système de notation -->
-                                        <form class="heb_card_Info_Note">
-                                            <input type="radio" id="card9_star5" name="card9_note" value="5"><label for="card9_star5"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card9_star4" name="card9_note" value="4"><label for="card9_star4"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card9_star3" name="card9_note" value="3"><label for="card9_star3"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card9_star2" name="card9_note" value="2"><label for="card9_star2"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                            <input type="radio" id="card9_star1" name="card9_note" value="1"><label for="card9_star1"><i class=" fa-solid fa-star neutral-star" aria-hidden="true"></i></label>
+                                        <div class="heb_card_Info_Note">
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                            <i class="fa-xs fa-solid fa-star neutral-star" aria-hidden="true"></i>
                                             <span class="sr-only">Note de 4 sur 5 étoiles</span>
-                                        </form>
+                                        </div>
                                     </div>
                                 </article>
                             </a>
@@ -229,7 +227,7 @@
                     </div>
                     
                     <a href="" id="plus_info">Afficher plus</a>
-                </section>
+                </div>
 
                 <!-- Mise en place de la partie indépendante concernant les hébergements les plus populaires -->
                 <aside class="populaire">
@@ -241,7 +239,7 @@
                     </div>
 
                     <!-- Première carte d'hôtel populaire -->
-                    <a href="" class="populaire_Lien" id="pop_Card1">
+                    <a href="#" class="populaire_Lien" id="pop_Card1">
                         <article class="populaire_Card">
                             <img src="images/hebergements/emile-guillemot.jpg" alt="Image de la chambre d'hôtel 'Le soleil du matin'">
                             <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
@@ -251,20 +249,20 @@
                                     <p>Nuit à partir de 25<span id="euro">€</span></p>
                                 </div>
                                 <!-- Système de notation -->
-                                <form class="card_Info_Note">
-                                    <input type="radio" id="card1_star5" name="card1_note" value="5"><label for="card1_star5"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                    <input type="radio" id="card1_star4" name="card1_note" value="4"><label for="card1_star4"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                    <input type="radio" id="card1_star3" name="card1_note" value="3"><label for="card1_star3"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                    <input type="radio" id="card1_star2" name="card1_note" value="2"><label for="card1_star2"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                    <input type="radio" id="card1_star1" name="card1_note" value="1"><label for="card1_star1"><i class=" fa-solid fa-star neutral-star" aria-hidden="true"></i></label>
+                                <div class="card_Info_Note">
+                                    <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-xs fa-solid fa-star neutral-star" aria-hidden="true"></i>
                                     <span class="sr-only">Note de 4 sur 5 étoiles</span>
-                                </form>
+                                </div>
                             </div>
                         </article>
                     </a>
 
                     <!-- Seconde carte d'hôtel  populaire -->
-                    <a href="" class="populaire_Lien" id="pop_Card2">
+                    <a href="#" class="populaire_Lien" id="pop_Card2">
                         <article class="populaire_Card">
                             <img src="images/hebergements/aw-creative.jpg" alt="Image de la chambre d'hôte 'Au coeur de l'eau'">
                             <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
@@ -274,20 +272,20 @@
                                     <p>Nuit à partir de 71<span id="euro">€</span></p>
                                 </div>
                                 <!-- Système de notation -->
-                                <form class="card_Info_Note">
-                                    <input type="radio" id="card2_star5" name="card2_note" value="5"><label for="card2_star5"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                    <input type="radio" id="card2_star4" name="card2_note" value="4"><label for="card2_star4"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                    <input type="radio" id="card2_star3" name="card2_note" value="3"><label for="card2_star3"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                    <input type="radio" id="card2_star2" name="card2_note" value="2"><label for="card2_star2"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                    <input type="radio" id="card2_star1" name="card2_note" value="1"><label for="card2_star1"><i class=" fa-solid fa-star neutral-star" aria-hidden="true"></i></label>
+                                <div class="card_Info_Note">
+                                    <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-xs fa-solid fa-star neutral-star" aria-hidden="true"></i>
                                     <span class="sr-only">Note de 4 sur 5 étoiles</span>
-                                </form>
+                                </div>
                             </div>
                         </article>
                     </a>
 
                     <!-- Troisème carte d'hôtel  populaire -->
-                    <a href="" class="populaire_Lien" id="pop_Card3">
+                    <a href="#" class="populaire_Lien" id="pop_Card3">
                         <article class="populaire_Card">
                             <img src="images/hebergements/febrian-zakaria2.jpg" alt="Image de la chambre d'hôtel 'Bleu et Blanc'">
                             <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
@@ -297,28 +295,28 @@
                                     <p>Nuit à partir de 68<span id="euro">€</span></p>
                                 </div>
                                 <!-- Système de notation -->
-                                <form class="card_Info_Note">
-                                    <input type="radio" id="card3_star5" name="card3_note" value="5"><label for="card3_star5"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                    <input type="radio" id="card3_star4" name="card3_note" value="4"><label for="card3_star4"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                    <input type="radio" id="card3_star3" name="card3_note" value="3"><label for="card3_star3"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                    <input type="radio" id="card3_star2" name="card3_note" value="2"><label for="card3_star2"><i class=" fa-solid fa-star" aria-hidden="true"></i></label>
-                                    <input type="radio" id="card3_star1" name="card3_note" value="1"><label for="card3_star1"><i class=" fa-solid fa-star neutral-star" aria-hidden="true"></i></label>
+                                <div class="card_Info_Note">
+                                    <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-xs fa-solid fa-star neutral-star" aria-hidden="true"></i>
                                     <span class="sr-only">Note de 4 sur 5 étoiles</span>
-                                </form>
+                                </div>
                             </div>
                         </article>
                     </a>
                    
                 </aside>
 
-            </div>
+            </section>
 
             <section id="activites">
                 <h2>Activités à Marseille</h2>
                 <div class="activites_rangee">
 
                     <!-- Première Activitée -->
-                    <a href="" class="activites_Lien" id="act_Card1">
+                    <a href="#" class="activites_Lien" id="act_Card1">
                         <article class="activites_Card">
                             <img src="images/activites/reno-laithienne.jpg" alt="Image du 'Vieux-Port' avec des bateaux">
                             <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
@@ -327,7 +325,7 @@
                     </a>
 
                     <!-- Deuxième Activitée -->
-                    <a href="" class="activites_Lien" id="act_Card2">
+                    <a href="#" class="activites_Lien" id="act_Card2">
                         <article class="activites_Card">
                             <img src="images/activites/paul-hermann.jpg" alt="Image du 'Fort de pomègues' vu de loin">
                             <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
@@ -336,7 +334,7 @@
                     </a>
 
                     <!-- Troisième Activitée -->
-                    <a href="" class="activites_Lien" id="act_Card3">
+                    <a href="#" class="activites_Lien" id="act_Card3">
                         <article class="activites_Card">
                             <img src="images/activites/kilyan-sockalingum.jpg" alt="Image de paysage du 'Parc national des Calanques'">
                             <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
@@ -345,7 +343,7 @@
                     </a>
 
                     <!-- Quatrième Activitée -->
-                    <a href="" class="activites_Lien" id="act_Card4">
+                    <a href="#" class="activites_Lien" id="act_Card4">
                         <article class="activites_Card">
                             <img src="images/activites/florian-wehde.jpg" alt="Image de la basilique 'Notre dame de la garde'">
                             <!-- Partie contenant l'ensemble des infos lié à l'hôtel -->
@@ -361,32 +359,32 @@
         <!-- Pied-de-page comprenant les infos complémentaire du site (charte, centre aide,etc..) -->
         <footer>
             <!-- 1er colonne -->
-            <section class="sectionFooter">
-                <h4>À propos</h4>
+            <article class="sectionFooter">
+                <h2>À propos</h2>
                 <ul class="listeFooter">
-                    <li><a href="">Fonctionnement du site</a></li>
-                    <li><a href="">Conditions générales</a></li>
-                    <li><a href="">Données et confidentialité</a></li>
+                    <li><a href="#">Fonctionnement du site</a></li>
+                    <li><a href="#">Conditions générales</a></li>
+                    <li><a href="#">Données et confidentialité</a></li>
                 </ul>
-            </section>
+            </article>
 
             <!-- 2ème colonne -->
-            <section class="sectionFooter">
-                <h4>Nos hébergements</h4>
+            <article class="sectionFooter">
+                <h2>Nos hébergements</h2>
                 <ul class="listeFooter">
-                    <li><a href="">Charte qualité</a></li>
-                    <li><a href="">Proposer votre hôtel</a></li>
+                    <li><a href="#">Charte qualité</a></li>
+                    <li><a href="#">Proposer votre hôtel</a></li>
                 </ul>
-            </section>
+            </article>
 
             <!-- 3ème colonne -->
-            <section class="sectionFooter">
-                <h4>Assistance</h4>
+            <article class="sectionFooter">
+                <h2>Assistance</h2>
                 <ul class="listeFooter">
-                    <li><a href="">Centre d'aide</a></li>
-                    <li><a href="">Nous contacter</a></li>
+                    <li><a href="#">Centre d'aide</a></li>
+                    <li><a href="#">Nous contacter</a></li>
                 </ul>
-            </section>
+            </article>
         </footer>   
 </body>
 </html>
