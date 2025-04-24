@@ -237,7 +237,7 @@ dans le label */
 /*  font-size à 10px pour paramètrer la taille de l'icone en héritage et ne pas utiliser
 le sizing Font Awesome  */
 .info i{
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .info p, .selection-title p{
@@ -266,37 +266,31 @@ le sizing Font Awesome  */
 avec un espacement */
 .hebergement_et_pop{
     display: flex;
-    flex-direction: row;
     gap:40px;
 }
 
-/* Sizing de la section par rapport à l'aside, mise en colonne avec du flexbox pour 
-ajouter un gap entre les élements */
-#hebergement{
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
 
 /* Intégration du fond de couleur, marge interne et arrondi des angles de 
-la section et de l'aside */
+la section et de l'aside et ajouter un gap entre les élements  */
 #hebergement, .populaire{
     background-color: var(--main-bg-color);
     padding: 30px;
     border-radius: 15px;
-}
-
-/* Désactivation des input radio pour respecter une représantation purement graphique
-de la maquette pour les étoiles hébergements et populaires */
-.card_Info_Note input, .heb_card_Info_Note input{
-    display: none;
+    gap: 30px;
 }
 
 /**************************** Section Hébergement ********************************************/
 /********************************************************************************************/
 
-/* Mise en duex ligne séparées par 30px  */
+/* Sizing de la section par rapport à l'aside, mise en colonne avec du flexbox pour 
+aligné verticalement le titre, les cards et le lien*/
+#hebergement{
+    display: flex;
+    flex-direction: column;
+    flex: 1 70.5%;
+}
+
+/* Mise en forme, deux ligne séparées par 30px grâce au débordement autorisé */
 .hebergement_contenu{
     display: flex;
     gap: 30px;
@@ -304,22 +298,16 @@ de la maquette pour les étoiles hébergements et populaires */
 }
 
 /* Mise en forme des liens contenant les cards d'hébergements et ajustement de la largeur pour 
-correspondre à 1/3 de la tailel disponible */
+correspondre à 1/3 de la taille disponible */
 .hebergement_Lien{
-    display: flex;
     flex: 1 0 27%;
     border-radius: 20px;
     background-color: white;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 
-/* Ajustement de la largeur des articles pour prendre tout l'espace disponible soit les 
-33% définit au-dessus */
-.hebergement_Card{
-    width: 100%;
-}
-
-/* Sizing et mise en forme de l'image avec border-box pour qu'elle reste dans son conteneur */
+/* Sizing et mise en forme de l'image avec border-box pour qu'elle reste dans son conteneur
+width à 100% pour qu'elle occupe tout la place disponible de sa ligne  */
 .hebergement_Card img{
     object-fit: cover;
     width: 100%;
@@ -342,11 +330,7 @@ de mettre son parent en flex uniquement pour ajouter un gap  */
     margin-bottom: 8px;
 }
 
-/* Gestion des étoiles de notation, taille, disposition et espacement */
-.heb_card_Info_Note{
-    
-}
-
+/* Gestion des étoiles de notation, taille */
 .heb_card_Info_Note .fa-star{
     font-size: 0.85em;
 }
@@ -360,28 +344,33 @@ de mettre son parent en flex uniquement pour ajouter un gap  */
 /**************************** Aside Populaires ********************************************/
 /********************************************************************************************/
 
-/* Réglage des card: hauteur et largeur, arrondis des angles, couleur d'arrière-plan
+.populaire{
+    display: flex;
+    flex-direction: column;
+    flex: 1 32%;
+}
+
+/* Mise en forme des cards, en colonne avec espacement entre chacune  */
+.pop_Contenu{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Réglage des card: arrondis des angles, couleur d'arrière-plan
 et effet d'ombre portée, pour le display ici on a le choix entre flex et block */
 .populaire_Lien{
-    display: flex;
-    width: 369px;
-    height: 146px;
     border-radius: 20px;
     background-color: white;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 
-/* Espacement entre les cards ainsi que la partie titre */
-.populaire_TitreIcone, #pop_Card1, #pop_Card2{
-    margin-bottom: 30px;
-}
-
 /* Réglage des images: image dimensionné pour remplir son parent en gardant son ratio(empêche la déformation),
 largeur et hauteur, arrondi des angles et bordure, et border-box pour que l'image et bordure rentre
-dans le conteneur  */
+dans le conteneur , width à 33.5% pour représenter les 123px en était plus souple avec des % */
 .populaire_Card img {
     object-fit: cover;
-    width: 123px;
+    width: 33.5%;
     height: 146px;
     box-sizing: border-box;
     border-radius: 20px 0 0 20px;
@@ -396,11 +385,10 @@ dans le conteneur  */
     align-items: center;
 }
 
-/* Alignement horizontale au sein des cards de l'image et des informations */
+/* Alignement horizontale au sein des cards de l'image et des informations avec espacement */
 .populaire_Card{
     display: flex;
     gap: 15px;
-    width:100%;
 }
 
 /* Mise en colonne de la partie information concernant la chambre d'hôtel,
@@ -461,17 +449,16 @@ d'une marge au-dessus avec le titre */
 
 /* Sizing des cards d'activités et effet d'ombrage  */
 .activites_Lien{
-    display: flex;
-    width: 25%;
+    flex: 1;
     height: 439px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 
-/* Mise en colonne du contenu des cards activités et taille ajuster à son conteneur */
+/* Mise en colonne du contenu des cards activités (image et titre associé) */
 .activites_Card{
-    width: 100%;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 /* Sizing en largeur et hauteur de l'image, arrondis des angles supérieur et redimensionnement en 
@@ -488,6 +475,10 @@ gardant le ratio de taille initiale de l'image */
     padding: 20px 19px 20px 19px;
     background-color: white;
     border-radius: 0 0 20px 20px;
+}
+
+.activites h2{
+    padding: 2px 0 2px 0;
 }
 
 /************************************** FOOTER *************************************************/
