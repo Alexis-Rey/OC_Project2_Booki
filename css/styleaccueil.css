@@ -470,14 +470,18 @@ gardant le ratio de taille initiale de l'image */
     border-radius: 20px 20px 0 0;
 }
 
-/* Espacement interne du titre, couleur de fond et arrondi des angles inférieurs */
+/* Espacement interne du titre, couleur de fond et arrondi des angles inférieurs,
+ajout d'une taile pour la box titre et d'une box sizing pour contenir le padding dans les 59px,
+pertmet la gestion des liserais toujours constant et de même taille */
 .activites_Card h3{
     padding: 20px 19px 20px 19px;
     background-color: white;
     border-radius: 0 0 20px 20px;
+    height: 59px;
+    box-sizing: border-box;
 }
 
-.activites h2{
+#activites h2{
     padding: 2px 0 2px 0;
 }
 
@@ -548,33 +552,57 @@ footer{
     }
 
     /**************************** SECTION HEBERGEMENT ET POPULAIRE **********************/
+    /* Mise en colonne de l'hebergement et du populaire avec un nouveau espacement */
     .hebergement_et_pop{
         flex-direction: column;
         gap: 50px;
     }
 
+    /**************************** PARTIE POPULAIRE **************************************/
+    /* Modif sur l'espacement entre la ligne de titre et les cards  */
     .populaire{
-        display: flex;
+        gap: 20px;
+    }
+
+    /* Passage des cards populaires en ligne et espace entre chaque carte modif à 20px */
+    .pop_Contenu{
         flex-direction: row;
-        flex-wrap: wrap;
+        gap: 20px;
     }
 
-    .populaire_TitreIcone{
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    #pop_Card1, #pop_Card2{
-        margin-bottom: 0;
-        margin-right: 20px;
-    }
-
+    /* Redimensionnement de la largeur des cards pour la nouvelle disposition en prenant en compte
+    les espacements  */
     .populaire_Lien{
         width: calc((100% - 40px) / 3);
     }
 
-    .populaire_Card img{
-        width: 91.67px;
+    /**************************** PARTIE ACTIVITE S**************************************/
+    
+    /* Hauteur des box qui s'adapte au contenu (image + titre) */
+    .activites_Lien{
+        height: auto;
+    }
+
+    /* Hauteur max fixé à 200px une fois au format tablette (voir maquette figma) */
+    .activites_Card img{
+        max-height: 200px;
+    }
+
+    /* Centrage verticale des titres et ajustement de la taille pour un rendu agréble pour les 
+    grandes et petites tablettes */
+    .activites_Card h3{
+       flex: 1 1 33%;
+       align-content:center;
+    }
+
+}
+
+@media (max-width: 824px){
+      /**************************** PARTIE HEBERGEMENTS **************************************/
+    /* Nouveaux format d'espacement pour la partie informative des cards pour la maintenir
+    visuellement correcte sur tablette petit format */
+    .hebergement_Card_Info{
+        padding: 0 0 5px 5px;
     }
 }
 
