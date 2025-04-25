@@ -398,7 +398,7 @@ après l'image */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex: 1.5;
+    flex: 1;
     padding: 10px 5px 5px 0;
 }
 
@@ -449,7 +449,7 @@ d'une marge au-dessus avec le titre */
 
 /* Sizing des cards d'activités et effet d'ombrage  */
 .activites_Lien{
-    flex: 1;
+    flex: 1 0 20%;
     height: 439px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
@@ -458,7 +458,6 @@ d'une marge au-dessus avec le titre */
 .activites_Card{
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
 /* Sizing en largeur et hauteur de l'image, arrondis des angles supérieur et redimensionnement en 
@@ -577,8 +576,13 @@ footer{
     }
 
     /**************************** PARTIE ACTIVITE S**************************************/
-    
-    /* Hauteur des box qui s'adapte au contenu (image + titre) */
+    /* Mise en place du débordement pour les tablettes à petit format */
+    .activites_rangee{
+        flex-wrap: wrap;
+    }
+
+    /* Hauteur des box qui s'adapte au contenu (image + titre) et ne suit plus la height définit
+    sur desktop */
     .activites_Lien{
         height: auto;
     }
@@ -591,19 +595,36 @@ footer{
     /* Centrage verticale des titres et ajustement de la taille pour un rendu agréble pour les 
     grandes et petites tablettes */
     .activites_Card h3{
-       flex: 1 1 33%;
+       height: 70px;
        align-content:center;
     }
 
 }
 
-@media (max-width: 824px){
+/***************************** RESPONSIVE TABLETTE PETIT FORMAT *******************************/
+@media (max-width: 856px){
+
       /**************************** PARTIE HEBERGEMENTS **************************************/
     /* Nouveaux format d'espacement pour la partie informative des cards pour la maintenir
     visuellement correcte sur tablette petit format */
     .hebergement_Card_Info{
         padding: 0 0 5px 5px;
     }
+
+    /**************************** PARTIE HEBERGEMENTS **************************************/
+    /* Augmentation de l'espace dispo pour les info sur petit format */
+    .populaire_Card_Info{
+        flex: 1 0 58%;
+    }
+
+    /**************************** PARTIE ACTIVITES **************************************/
+    /* Augmentation de l'espace disponibles des card sur petit format pour un passage sur 
+    deux lignes */
+    .activites_Lien{
+        flex: 1 0 33%
+    }
+
+
 }
 
 /***********************  Responsive Mobile (<768px) ************************************/
