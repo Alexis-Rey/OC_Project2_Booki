@@ -409,7 +409,7 @@ après l'image */
 }
 
 /* Mise en gras du "€" et du "afficher plus" de la section hébergement */
-#euro, #plus_info{
+.euro, #plus_info{
     font-weight: 700;
 }
 
