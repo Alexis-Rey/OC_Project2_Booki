@@ -161,7 +161,7 @@ calcule de la taille à prendre pour l'input en largeur en fonction des
 autres élements du formulaire */
 #form_selection input{
     font-size: var(--subtitle-size);
-    width:calc(100% - 182px);
+    width:51%;
     text-align: center;
     border:1px solid var(--main-bg-color);
     font-weight: 700;
@@ -505,9 +505,15 @@ footer{
     list-style-type: none;
 }
 
-/* Espacement entre les élements du footer */
-.sectionFooter h2, .listeFooter li{
+/* Espacement entre les titre et les élements du footer */
+.sectionFooter h2{
     margin-bottom: 15px;
+}
+
+.listeFooter{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 /********************************* MEDIA QUERIES *****************************/
@@ -629,24 +635,25 @@ footer{
 
 /***********************  Responsive Mobile (<768px) ************************************/
 @media (max-width: 767.99px) {
+
     /******************* Globale ******************************/
    /* Suppresion des marges de côté du contenu mise en place sur tablette et desktop */
     body{
         padding: 0;
     }
     
-    /* ***********Modif Header********************************* */
+    /* ********************** MODIF HEADER ******************************************* */
     /* Disposition du header en colonne pour la version mobile */
     header{
         flex-direction: column;
     }
 
     /* Centrage du logo et des textes */
-    a[href="accueil.html"], #menuNav li{
+    header a, #menuNav li{
         text-align: center; 
     }
 
-    /* Suppression du gap entre les élements enfants li*/
+    /* Suppression du gap entre les élements enfants li permettant ainsi au border d'être jointe*/
     #menuNav{
         gap: 0px;
     }
@@ -656,7 +663,7 @@ footer{
     #menuNav li{
         padding-top: 0px;
         padding-bottom: 16px;
-        width: 100%; 
+        width: 50%; 
     }
 
     /* Déplacement de la barre en bas */
@@ -664,15 +671,15 @@ footer{
         border-bottom-color: var(--main-color);
         border-top-color: transparent;
     }
-
-    /****************************** Modif Main ***********************************/
-    /* Rajout de marge gauch et droite pour le contenu principale sous mobile, viens
-    remplacer les marges globale de body sur les autres formats */
-    main{
-        padding: 0 20px 0 20px;
-    }
+  
 
     /************************** Modif Section Selection ************************/
+
+     /* Rajout de marge gauche et droite intérieur pour le contenu principale sous mobile, viens
+    remplacer les marges globale de body sur les autres formats */
+    .selection{
+        padding: 0 20px 0 20px;
+    }
     
     /***************************** Partie recherche  ************************/
     /* Mise en auto de la largeur du formulaire fixé à 377px sur ordinateur */
@@ -684,7 +691,7 @@ footer{
     suppresion de l'alignement centré et ajout compensatoire de 24px à gauche,
     suppresion de la bordure à droite et ajout d'une marge négative pour que les bordures atteignent la loupe */
     #form_selection input{
-        width: calc(100% - 98px);
+        width: calc(100% - 99px);
         text-align: left;
         padding-left: 24px;
         margin-right: -10px;
@@ -707,31 +714,97 @@ footer{
     }
 
     /****************************** Modif Filtrage ******************************/
-    /* Espacement entre les éléments en ligne et en colonne */
+    /* Nouveau Espacement entre les éléments en ligne et en colonne */
     .filtrer{
         row-gap: 20px;
         column-gap: 10px;
     }
 
     /*Redéfinition de la taille police et de la taille d'un élement par rapport à
-    son parents et la presence d'un gap de 10px entre les deux éléements  */
+    son parents et la presence d'un gap de 10px entre les deux éléements, suppression
+    de la marge intérieur pour permettre aux boutons de s'adapter pour tout les formats mobile  */
    .boutonFiltre{
-    
+    padding: 0;
     width: calc(50% - 5px);
     font-size: var(--info-size);
    }
 
-   
+   /**************************** SECTION HEBERGEMENT ET POPULAIRE **********************/
 
-    /* ***********Modif Footer********************************* */
+   /* Nouveau espacement entre la section hébergement et populaire */
+   .hebergement_et_pop{
+    gap: 15px;
+   }
+
+   /******************************* HEBERGEMENT ****************************************/
+   /* On met la section en-dessous avec order, changement de la couleur de fond, nouvelle 
+   marge intérieur pour mobile et nouvelle espacement entre le titre et les cards */
+   #hebergement{
+    order: 2;
+    background-color: white;
+    gap: 15px;
+    padding: 20px;
+   }
+
+   /* Nouvelle marge inter-cards */
+   .hebergement_contenu{
+    gap: 15px;
+   }
+
+   /* Modification de la taille du conteneur card pour que ces dernières soit rangées en colonne
+   pour les mobiles au petit format */
+   .hebergement_Lien{
+    flex: 1 0 48%;
+   }
+
+   /* Rétablissement des marges intérieur comme sur desktop */
+   .hebergement_Card_Info{
+    padding: 0 15px 0 15px;
+   }
+
+   /******************************* Populaire ****************************************/
+   /* On met l'aside au-dessus avec order, nouvelle marge intérieur pour correspondre 
+   à la maquette et espace entre le titre et les cards modifié*/
+   .populaire{
+    order: 1;
+    padding: 30px 20px 30px 20px;
+    gap: 15px;
+   }
+
+   /* Mise en colonne des cards comme sur desktop et espacement ajusté */
+   .pop_Contenu{
+    gap: 15px;
+    flex-direction: column;
+   }
+
+   /* Largeur des cards réglé pour qu'elle occupe tout l'espace */
+   .populaire_Lien{
+    width: 100%;
+   }
+
+   /**************************** SECTION ACTIVITES **********************/
+   /* Modification de la place que prends une card(largeur) pour correspondre à la version mobile */
+   .activites_Lien{
+    flex: 1 0 48%;
+   }
+
+   /* Nouveau espacement inter-cards */
+   .activites_rangee{
+    gap: 15px;
+   }
+
+   /* Nouvelle dimension max pour les images sur mobile */
+   .activites_Card img{
+    max-height: 141px;
+   }
+
+    /* ******************************** MODIF FOOTER ********************************* */
     /* Mise en disposition colonne et ajustement de l'espacement avec la bordure de 30px */
-    /* Choix de display flex over block pour faire le gap 50px sinon avec margin-bottom cela
-    créer un espacement à la fin de la dern section non voulu */
     footer{
         display: flex;
         flex-direction: column;
         gap:50px;
-        padding:30px 0 30px 30px;
+        padding:30px;
     }
 
     /*Correction de l'espace prévu par section anciennement 33%
