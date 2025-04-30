@@ -74,8 +74,7 @@ h3{
 /****************************************************************************************/
 
 /* Ajustement de la taille de police pour le menu de navigation et les liens du pied-de-page */
-/* Suppression de la marge intérieur gauche provenant
-    du comportement par défault d'une liste ul ou ol */
+/* Suppression de la marge intérieur gauche provenant du comportement par défault d'une liste ul ou ol */
 #menuNav, .listeFooter{
     font-size: var(--normal-size);
     padding-left: 0;
@@ -531,7 +530,7 @@ footer{
     }
 }
 
-/************************ Responsive Tablette (>=768px et <= 1024) **********************/
+/************************ Responsive Tablette (>=768px et <= 1024px) **********************/
 @media (max-width: 1024px) {
 
     /********************** SECTION RECHERCHE ***************************/
@@ -607,7 +606,7 @@ footer{
 
 }
 
-/***************************** RESPONSIVE TABLETTE PETIT FORMAT *******************************/
+/***************************** RESPONSIVE TABLETTE PETIT FORMAT ( >=768px et <856px) *******************************/
 @media (max-width: 856px){
 
       /**************************** PARTIE HEBERGEMENTS **************************************/
